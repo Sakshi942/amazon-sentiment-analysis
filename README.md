@@ -1,57 +1,82 @@
-# amazon-sentiment-analysis
-NLP-based sentiment analysis of Amazon product reviews visualized with Power BI.
-# 📦 Sentiment Analysis of Amazon Product Reviews with AI-Powered Dashboard
+# 📊 Sentiment Analysis of Amazon Product Reviews with AI-Powered Insights Dashboard
+
+This Power BI dashboard analyzes customer sentiments from Amazon product reviews using an AI-powered NLP model. It provides a deep dive into customer feedback trends, helping understand how different products are perceived by users.
 
 ## 🔍 Project Overview
 
-This project analyzes real-world Amazon product reviews using a pre-trained sentiment analysis model from Hugging Face. The insights are visualized in an interactive Power BI dashboard to help understand customer satisfaction, product performance, and brand perception.
+This project uses a pre-trained Hugging Face sentiment analysis model to classify Amazon product reviews as **Positive** or **Negative**. The results are visualized in Power BI through interactive charts and KPIs, making it easy to derive actionable insights from large-scale textual data.
+
+## 📁 Data Source
+
+- Dataset: Amazon Product Reviews (CSV)
+- Columns used: `brand`, `name`, `reviews.rating`, `reviews.text`, `text_sentiment` (AI-predicted)
 
 ---
 
-## 🛠️ Tools & Technologies
+## 📈 Dashboard Pages
 
-- Python
-- Hugging Face Transformers (distilbert-base-uncased-finetuned-sst-2-english)
-- Pandas & NumPy
-- Power BI
-- Jupyter Notebook
+### 📌 Page 1: Overall Customer Sentiment
 
----
-
-## 📊 Key Features
-
-- Classifies review text as **Positive** or **Negative** using NLP models.
-- Enriches the dataset with:
-  - Sentiment label & confidence score
-  - Length of review
-  - Product brand, category, and star rating
-- Creates an interactive Power BI dashboard with:
-  - Sentiment distribution
-  - Trend over time
-  - Top loved and hated products
-  - Brand-level sentiment comparison
-  - Filters for category, rating, review length, etc.
+- **Pie Chart**: Visual breakdown of total positive vs negative reviews.
+- **Clustered Column Chart**: Positive vs negative review distribution across top 10 products.
+- **KPI Cards**:
+  - 📗 Total Positive Sentiment %
+  - 📕 Total Negative Sentiment %
+- **Slicers**:
+  - ⭐ Review Ratings (1–5)
+  - 🏷️ Brands
 
 ---
 
-## 🗂️ Dataset
+### 📌 Page 2: Product Popularity Analysis
 
-- **Source**: [Amazon Product Reviews Dataset](https://www.kaggle.com/datasets/datafiniti/consumer-reviews-of-amazon-products)
-- Contains fields like: product name, brand, category, review text, rating, etc.
-
----
-
-## 📈 Sample Visuals (To Be Added)
-
-> Dashboard screenshots and charts will be added after final build.
+- **Top 10 Most Loved Products**: Based on positive sentiment counts.
+- **Top 10 Most Hated Products**: Based on negative sentiment counts.
+- **KPI Card**: Average Customer Rating
+- **Slicers**:
+  - ⭐ Review Ratings
+  - 🏷️ Brands
 
 ---
 
-## 🚧 Status
+## 🛠 Technologies Used
 
-🔨 In Progress — README and data preparation complete.  
-✅ Power BI dashboard and full implementation coming soon.
+- **Power BI** for interactive visualizations
+- **Python** + **Hugging Face Transformers** for sentiment analysis
+- **Pandas** for data cleaning and processing
 
 ---
+
+## 🌟 Key Insights
+
+- Discover which Amazon products are loved the most.
+- Identify negatively perceived products quickly.
+- Filter customer sentiment by brand and rating.
+
+---
+
+## 📎 File
+
+- `Amazon_Sentiment_Dashboard.pbix` — Power BI report file
+
+---
+
+## 📌 How to Use
+
+1. Open the `.pbix` file in Power BI Desktop.
+2. Interact with slicers and visuals to explore the data.
+3. Gain insights into what drives customer satisfaction or dissatisfaction.
+
+---
+
+## 🙋‍♀️ Author
+
+**Sakshi** – Aspiring Data Analyst | Passionate about turning data into actionable insights 🌸
+
+---
+
+
+
+
 
 
