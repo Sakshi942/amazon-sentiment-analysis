@@ -1,79 +1,116 @@
-# 📊 Sentiment Analysis of Amazon Product Reviews with AI-Powered Insights Dashboard
+📊 Sentiment Analysis of Amazon Product Reviews using DistilBERT
 
-This Power BI dashboard analyzes customer sentiments from Amazon product reviews using an AI-powered NLP model. It provides a deep dive into customer feedback trends, helping understand how different products are perceived by users.
+This project demonstrates an end-to-end NLP pipeline for sentiment analysis of Amazon product reviews using a fine-tuned DistilBERT transformer model. The sentiment predictions are further used for dashboard-based insights and visualization.
 
-## 🔍 Project Overview
+🔍 Project Overview
 
-This project uses a pre-trained Hugging Face sentiment analysis model to classify Amazon product reviews as **Positive** or **Negative**. The results are visualized in Power BI through interactive charts and KPIs, making it easy to derive actionable insights from large-scale textual data.
+The goal of this project is to classify Amazon product reviews into Positive and Negative sentiment using a transformer-based NLP model.
+A pre-trained DistilBERT model was fine-tuned on a small labeled subset of reviews to demonstrate supervised sentiment classification. The predicted sentiments are then used to analyze customer feedback trends.
 
-## 📁 Data Source
+📁 Dataset
 
-- Dataset: Amazon Product Reviews (CSV)
-- Columns used: `brand`, `name`, `reviews.rating`, `reviews.text`, `text_sentiment` (AI-predicted)
+Source: Amazon product reviews (CSV format)
 
----
+Key columns:
 
-## 📈 Dashboard Pages
+Review → customer review text
 
-### 📌 Page 1: Overall Customer Sentiment
+label → sentiment label (0 = Negative, 1 = Positive)
 
-- **Pie Chart**: Visual breakdown of total positive vs negative reviews.
-- **Clustered Column Chart**: Positive vs negative review distribution across top 10 products.
-- **KPI Cards**:
-  - 📗 Total Positive Sentiment %
-  - 📕 Total Negative Sentiment %
-- **Slicers**:
-  - ⭐ Review Ratings (1–5)
-  - 🏷️ Brands
+Predicted_Sentiment → model output sentiment
 
----
+A small manually labeled subset was used for fine-tuning to demonstrate the NLP pipeline.
 
-### 📌 Page 2: Product Popularity Analysis
+⚙️ NLP & Machine Learning Pipeline
 
-- **Top 10 Most Loved Products**: Based on positive sentiment counts.
-- **Top 10 Most Hated Products**: Based on negative sentiment counts.
-- **KPI Card**: Average Customer Rating
-- **Slicers**:
-  - ⭐ Review Ratings
-  - 🏷️ Brands
+Data Loading & Cleaning
 
----
+Loaded Amazon reviews from CSV
 
-## 🛠 Technologies Used
+Performed text cleaning (lowercasing, removing special characters, stopwords)
 
-- **Power BI** for interactive visualizations
-- **Python** + **Hugging Face Transformers** for sentiment analysis
-- **Pandas** for data cleaning and processing
+Labeling
 
----
+Manually labeled reviews as Positive or Negative
 
-## 🌟 Key Insights
+Converted labels into numeric format for model training
 
-- Discover which Amazon products are loved the most.
-- Identify negatively perceived products quickly.
-- Filter customer sentiment by brand and rating.
+Tokenization
 
----
+Used Hugging Face DistilBertTokenizerFast
 
-## 📎 File
+Converted text into token IDs and attention masks
 
-- `Amazon_Sentiment_Dashboard.pbix` — Power BI report file
+Model Fine-tuning
 
----
+Used pre-trained distilbert-base-uncased
 
-## 📌 How to Use
+Fine-tuned the classification head using Hugging Face Trainer
 
-1. Open the `.pbix` file in Power BI Desktop.
-2. Interact with slicers and visuals to explore the data.
-3. Gain insights into what drives customer satisfaction or dissatisfaction.
+Trained for 2 epochs on labeled review data
 
----
+Model Evaluation
 
-## 🙋‍♀️ Author
+Evaluated performance using:
 
-**Sakshi** – Aspiring Data Analyst | Passionate about turning data into actionable insights 🌸
+Accuracy
 
----
+Precision
+
+Recall
+
+F1-score
+
+Used a train-test split for evaluation
+
+Inference & Output Generation
+
+Generated sentiment predictions for all reviews
+
+Saved results to CSV for dashboard integration
+
+📈 Dashboard & Insights
+
+Sentiment predictions were exported and used in Power BI
+
+Dashboard highlights:
+
+Overall positive vs negative sentiment
+
+Product-wise sentiment trends
+
+Brand-level sentiment analysis
+
+🛠 Technologies Used
+
+Python
+
+Hugging Face Transformers
+
+DistilBERT
+
+PyTorch
+
+Pandas & NumPy
+
+Scikit-learn
+
+Power BI (for visualization)
+
+🚀 Future Improvements
+
+Increase labeled dataset size
+
+Add Neutral sentiment using confidence thresholds
+
+Perform hyperparameter tuning
+
+Deploy model as an API
+
+📌 Key Takeaway
+
+This project focuses on practical application of transformer-based NLP, demonstrating how a pre-trained language model can be fine-tuned and integrated into a real-world analytics workflow.
+
 
 
 
